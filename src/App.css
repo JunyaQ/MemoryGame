@@ -37,12 +37,4 @@
   }
 }
 
-/*app start*/
-.newgame:hover{
-  background-color: darkblue;
-  color: white;
-}
-.newgame{
-  background-color: white;
-  color: darkblue;
-}
+

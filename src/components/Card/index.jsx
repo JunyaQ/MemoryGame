@@ -3,9 +3,12 @@ import './card.css';
 
 
 
-function Card({card, handleChoice,flip}){
+function Card({card, handleChoice,flip,disable}){
   const handleClick=()=>{
-    handleChoice(card);
+    if(!disable){
+      handleChoice(card);
+    }
+    
 
   }
     return (

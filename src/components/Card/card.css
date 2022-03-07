@@ -10,10 +10,23 @@
     grid-gap: 20px;
   }
 
+  /*front*/
   .card .cardimage{
     transform: rotateY(90deg);
-    position:absolute
+    transition: all ease-in 0.2s;
+    position:absolute;
   }
   .flip .cardimage{
     transform: rotateY(0deg);
+    transition-duration: 150ms;
+  }
+
+  /*back*/
+  .card .cardbackground{
+    transition: all ease-in 0.2s;
+    transition-duration: 150ms;
+    
+  }
+  .flip .cardbackground{
+    transform: rotateY(90deg);
   }
