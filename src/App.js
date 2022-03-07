@@ -96,7 +96,6 @@ function App() {
     setTimeout(() => {
     setchoiceone(null);
     setchoicetwo(null);
-      
     }, 1500);
     
     setturns(prevTurns => prevTurns+1);
