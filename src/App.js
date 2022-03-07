@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from 'react';
+import Card from './components/Card';
 
 
 const cardimage = [
@@ -29,6 +30,10 @@ const cardimage = [
 function App() {
   const [cards, setcards] = useState([]);
   const [turns, setturns] = useState(0);
+
+  const [choiceone, setchoiceone] = useState(null);
+  const[choicetwo, setchoicetwo] = useState(null);
+
   //shuffle
   const shufflecards = ()=>{
     const doubled = [...cardimage, ...cardimage];
@@ -38,6 +43,35 @@ function App() {
     setturns(0);
   }
   console.log(cards,turns);
+
+  const handleChoice=(card)=>{
+    //console.log(card);
+    if(choiceone!==null){
+      //console.log("2");
+      //console.log(card);
+      setchoicetwo(card);
+      if(choiceone.src === choicetwo.src){
+        // no flip back and set unclickable
+        setchoiceone(null);
+        setchoicetwo(null);
+        console.log(choiceone);
+        console.log(choicetwo);
+      }
+      else{
+        //flip back and wait for next try
+        setchoiceone(null);
+        setchoicetwo(null);
+        console.log(choiceone);
+        console.log(choicetwo);
+      }
+    }
+    else{
+     // console.log("1");
+      //console.log(card);
+      setchoiceone(card); 
+    }
+
+  }
   return (
     <div className="App">
       <h1>Memory Card Game</h1>
@@ -46,13 +80,7 @@ function App() {
       {/* display cards */}
       <div className='display'>
         {cards.map(card=>(
-          <div key={card.id}>
-            <div>
-              <img src={card.src} className='cardimage' alt="cardimage"/>
-              <img src='/img/background1.jpg' className='cardbackground' alt='cardbackground'/>
-            </div>
-
-          </div>
+          <Card key={card.id} card={card} handleChoice = {handleChoice}/>
         ))}
         </div>
     </div>
