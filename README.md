@@ -15,7 +15,7 @@ When all the card flipped to the front, the game is over
 - The project will run : http://localhost:3000/
 
 ## Deployed page
-https://junyaq.github.io/MemoryGame/
+https://amemorycardgame.herokuapp.com/
 ![Main page](https://github.com/JunyaQ/MemoryGame/blob/main/src/img/deploypage.jpg)
 
 ## Pictures of the card
