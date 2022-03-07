@@ -26,6 +26,42 @@ const cardimage = [
   {"src": "/img/card18.png", matched:false },
   {"src": "/img/card19.png", matched:false },
   {"src": "/img/card20.png", matched:false },
+  {"src": "/img/card21.png", matched:false },
+  {"src": "/img/card22.png", matched:false },
+  {"src": "/img/card23.png", matched:false },
+  {"src": "/img/card24.png", matched:false },
+  {"src": "/img/card25.png", matched:false },
+  {"src": "/img/card26.png", matched:false },
+  {"src": "/img/card27.png", matched:false },
+  {"src": "/img/card28.png", matched:false },
+  {"src": "/img/card29.png", matched:false },
+  {"src": "/img/card30.png", matched:false },
+  {"src": "/img/card31.png", matched:false },
+  {"src": "/img/card32.png", matched:false },
+  {"src": "/img/card33.png", matched:false },
+  {"src": "/img/card34.png", matched:false },
+  {"src": "/img/card35.png", matched:false },
+  {"src": "/img/card36.png", matched:false },
+  {"src": "/img/card37.png", matched:false },
+  {"src": "/img/card38.png", matched:false },
+  {"src": "/img/card39.png", matched:false },
+  {"src": "/img/card40.png", matched:false },
+  {"src": "/img/card41.png", matched:false },
+  {"src": "/img/card42.png", matched:false },
+  {"src": "/img/card43.png", matched:false },
+  {"src": "/img/card44.png", matched:false },
+  {"src": "/img/card45.png", matched:false },
+  {"src": "/img/card46.png", matched:false },
+  {"src": "/img/card47.png", matched:false },
+  {"src": "/img/card48.png", matched:false },
+  {"src": "/img/card49.png", matched:false },
+  {"src": "/img/card50.png", matched:false },
+
+
+
+
+
+
 
 ]
 
@@ -47,10 +83,11 @@ function Game() {
     const original = [...cardimage];
     for(var i = 0; i<pair; i++){
       
-      var random = Math.floor(Math.random()*(original.length));
+      var random = Math.floor(Math.random()*(original.length-1));
       console.log("random"+random);
       gameimage.push(cardimage[random]);
-      original.slice(random,1);
+      original.splice(random,1);
+      console.log(original.length);
      // console.log(cardimage.at(random));
     }
     console.log("GAME IMAGE");
@@ -79,8 +116,7 @@ function Game() {
       setchoiceone(card); 
     }
   }
-
-  useEffect(()=>{
+  useEffect((wincounter,value)=>{
  
     if(choiceone&&choicetwo){
       setdisable(true);
@@ -102,7 +138,7 @@ function Game() {
         reset();
       }
       else{
-        console.log("not match");
+        //console.log("not match");
         reset();
       }
     }
@@ -128,9 +164,9 @@ function Game() {
     <RangeSlider
       value={value}
       onChange={changeEvent => setValue(changeEvent.target.value)}
-      min={2}
+      min={4}
       max={100}
-      step={2}
+      step={4}
       size='lg'
       variant='dark'
     />
