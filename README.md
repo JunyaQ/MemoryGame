@@ -16,7 +16,7 @@ When all the card flipped to the front, the game is over
 
 ## Deployed page
 https://junyaq.github.io/MemoryGame/
-[Main page](https://github.com/JunyaQ/MemoryGame/blob/main/src/img/deploypage.jpg)
+![Main page](https://github.com/JunyaQ/MemoryGame/blob/main/src/img/deploypage.jpg)
 
 ## Pictures of the card
 https://www.pinterest.ca/cloriscreates/cloris-creates-pet-portraits/
