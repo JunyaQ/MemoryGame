@@ -31,7 +31,7 @@ const cardimage = [
 
 function Game() {
   const gameimage =[];
-  
+
   const [cards, setcards] = useState([]);
   const [turns, setturns] = useState(0);
 
@@ -43,8 +43,9 @@ function Game() {
   const [ value, setValue ] = useState(0); 
   // generate card
   const generatecard = (value)=>{
+    const pair = value/2;
     const original = [...cardimage];
-    for(var i = 0; i<value; i++){
+    for(var i = 0; i<pair; i++){
       
       var random = Math.floor(Math.random()*(original.length));
       console.log("random"+random);
@@ -128,8 +129,8 @@ function Game() {
       value={value}
       onChange={changeEvent => setValue(changeEvent.target.value)}
       min={2}
-      max={20}
-      step={1}
+      max={40}
+      step={2}
       size='lg'
       variant='dark'
     />
