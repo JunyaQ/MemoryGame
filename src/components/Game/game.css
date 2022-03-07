@@ -10,3 +10,10 @@
     padding: 20px;
     font-size: 15px;
   }
+
+  .border{
+    border-radius: 12px;
+    border-style: dotted;
+    border-color: gainsboro;
+    padding: 10px;
+}

@@ -1,6 +1,8 @@
 import {useEffect, useState} from 'react';
 import Card from '../Card';
 import './game.css'
+import 'react-bootstrap-range-slider/dist/react-bootstrap-range-slider.css';
+import RangeSlider from 'react-bootstrap-range-slider';
 
 
 const cardimage = [
@@ -35,6 +37,12 @@ function Game() {
   const[choicetwo, setchoicetwo] = useState(null);
 
   const [disable, setdisable] = useState(false);
+
+  const [ value, setValue ] = useState(0); 
+  // generate card
+  const generatecard = ()=>{
+    
+  }
 
   //shuffle
   const shufflecards = ()=>{
@@ -102,7 +110,18 @@ function Game() {
   return (
     <div className="App">
       <h1>Memory Card Game</h1>
+      <div className='border'>
+    <RangeSlider
+      value={value}
+      onChange={changeEvent => setValue(changeEvent.target.value)}
+      min={2}
+      max={20}
+      step={1}
+      size='lg'
+      variant='dark'
+    />
       <button className="newgame" onClick={shufflecards}> New Game</button>
+      </div>
 
       {/* display cards */}
       <div className='display'>
