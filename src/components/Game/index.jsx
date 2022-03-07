@@ -129,7 +129,7 @@ function Game() {
       value={value}
       onChange={changeEvent => setValue(changeEvent.target.value)}
       min={2}
-      max={40}
+      max={100}
       step={2}
       size='lg'
       variant='dark'
