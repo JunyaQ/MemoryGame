@@ -1,13 +1,16 @@
 /*card*/
+
 .cardimage, .cardbackground{
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
   }
   .display{
     margin-top: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
+    padding-right: 200px;
+    padding-left: 200px;
   }
 
   /*front*/

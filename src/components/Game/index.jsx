@@ -83,17 +83,10 @@ function Game() {
   const generatecard = (value)=>{
     const pair = value/2;
     const original = [...cardimage];
-    for(var i = 0; i<pair; i++){
-      
-      var random = Math.floor(Math.random()*(original.length-1));
-      console.log("random"+random);
-      gameimage.push(cardimage[random]);
-      original.splice(random,1);
-      console.log(original.length);
-     // console.log(cardimage.at(random));
+    original.sort(()=> Math.random()-0.5);
+    for(var i =0; i<pair; i++){
+      gameimage.push(original[i]);
     }
-    console.log("GAME IMAGE");
-    console.log(gameimage);
   }
 
   //shuffle
