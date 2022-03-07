@@ -3,26 +3,26 @@ import {useState} from 'react';
 
 
 const cardimage = [
-  {"src": "../public/img/card1.png"},
-  {"src": "../public/img/card2.png"},
-  {"src": "../public/img/card3.png"},
-  {"src": "../public/img/card4.png"},
-  {"src": "../public/img/card5.png"},
-  {"src": "../public/img/card6.png"},
-  {"src": "../public/img/card7.png"},
-  {"src": "../public/img/card8.png"},
-  {"src": "../public/img/card9.png"},
-  {"src": "../public/img/card10.png"},
-  {"src": "../public/img/card11.png"},
-  {"src": "../public/img/card12.png"},
-  {"src": "../public/img/card13.png"},
-  {"src": "../public/img/card14.png"},
-  {"src": "../public/img/card15.png"},
-  {"src": "../public/img/card16.png"},
-  {"src": "../public/img/card17.png"},
-  {"src": "../public/img/card18.png"},
-  {"src": "../public/img/card19.png"},
-  {"src": "../public/img/card20.png"},
+  {"src": "/img/card1.png"},
+  {"src": "/img/card2.png"},
+  {"src": "/img/card3.png"},
+  {"src": "img/card4.png"},
+  {"src": "/img/card5.png"},
+  {"src": "/img/card6.png"},
+  {"src": "/img/card7.png"},
+  {"src": "/img/card8.png"},
+  {"src": "/img/card9.png"},
+  {"src": "/img/card10.png"},
+  {"src": "/img/card11.png"},
+  {"src": "/img/card12.png"},
+  {"src": "/img/card13.png"},
+  {"src": "/img/card14.png"},
+  {"src": "/img/card15.png"},
+  {"src": "/img/card16.png"},
+  {"src": "/img/card17.png"},
+  {"src": "/img/card18.png"},
+  {"src": "/img/card19.png"},
+  {"src": "/img/card20.png"},
 
 ]
 
@@ -35,13 +35,26 @@ function App() {
     const shufflecard= doubled.sort(()=>Math.random()-0.5);
     const finalcard = shufflecard.map((card)=>({...card,id:Math.random()}));
     setcards(finalcard);
-    console.log(finalcard);
     setturns(0);
   }
+  console.log(cards,turns);
   return (
     <div className="App">
       <h1>Memory Card Game</h1>
       <button className="newgame" onClick={shufflecards}> New Game</button>
+
+      {/* display cards */}
+      <div className='display'>
+        {cards.map(card=>(
+          <div key={card.id}>
+            <div>
+              <img src={card.src} className='cardimage' alt="cardimage"/>
+              <img src='/img/background1.jpg' className='cardbackground' alt='cardbackground'/>
+            </div>
+
+          </div>
+        ))}
+        </div>
     </div>
   );
 }
