@@ -1,5 +1,5 @@
 import './App.css';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import Card from './components/Card';
 
 
@@ -41,36 +41,47 @@ function App() {
     const finalcard = shufflecard.map((card)=>({...card,id:Math.random()}));
     setcards(finalcard);
     setturns(0);
+    //reset();
   }
   console.log(cards,turns);
 
   const handleChoice=(card)=>{
     //console.log(card);
     if(choiceone!==null){
-      //console.log("2");
-      //console.log(card);
       setchoicetwo(card);
-      if(choiceone.src === choicetwo.src){
-        // no flip back and set unclickable
-        setchoiceone(null);
-        setchoicetwo(null);
-        console.log(choiceone);
-        console.log(choicetwo);
-      }
-      else{
-        //flip back and wait for next try
-        setchoiceone(null);
-        setchoicetwo(null);
-        console.log(choiceone);
-        console.log(choicetwo);
-      }
+      console.log("2");
+      console.log(card);
+      console.log(choiceone);
+      console.log(choicetwo);
+      //console.log(choicetwo.src);
     }
     else{
-     // console.log("1");
-      //console.log(card);
       setchoiceone(card); 
+      console.log("1");
+      console.log(card); 
     }
+  }
 
+  useEffect(()=>{
+    if(choiceone&&choicetwo){
+      if(choiceone.src === choicetwo.src){
+        console.log("match");
+        reset();
+      }
+      else{
+        console.log("not match");
+        reset();
+      }
+    }
+    },[choiceone, choicetwo]);
+
+  
+    
+
+  const reset =()=>{
+    setchoiceone(null);
+    setchoicetwo(null);
+    setturns(prevTurns => prevTurns+1);
   }
   return (
     <div className="App">
