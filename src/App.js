@@ -4,26 +4,26 @@ import Card from './components/Card';
 
 
 const cardimage = [
-  {"src": "/img/card1.png"},
-  {"src": "/img/card2.png"},
-  {"src": "/img/card3.png"},
-  {"src": "img/card4.png"},
-  {"src": "/img/card5.png"},
-  {"src": "/img/card6.png"},
-  {"src": "/img/card7.png"},
-  {"src": "/img/card8.png"},
-  {"src": "/img/card9.png"},
-  {"src": "/img/card10.png"},
-  {"src": "/img/card11.png"},
-  {"src": "/img/card12.png"},
-  {"src": "/img/card13.png"},
-  {"src": "/img/card14.png"},
-  {"src": "/img/card15.png"},
-  {"src": "/img/card16.png"},
-  {"src": "/img/card17.png"},
-  {"src": "/img/card18.png"},
-  {"src": "/img/card19.png"},
-  {"src": "/img/card20.png"},
+  {"src": "/img/card1.png", matched:false },
+  {"src": "/img/card2.png", matched:false },
+  {"src": "/img/card3.png", matched:false },
+  {"src": "img/card4.png", matched:false },
+  {"src": "/img/card5.png", matched:false },
+  {"src": "/img/card6.png", matched:false },
+  {"src": "/img/card7.png", matched:false },
+  {"src": "/img/card8.png", matched:false },
+  {"src": "/img/card9.png", matched:false },
+  {"src": "/img/card10.png", matched:false },
+  {"src": "/img/card11.png", matched:false },
+  {"src": "/img/card12.png", matched:false },
+  {"src": "/img/card13.png", matched:false },
+  {"src": "/img/card14.png", matched:false },
+  {"src": "/img/card15.png", matched:false },
+  {"src": "/img/card16.png", matched:false },
+  {"src": "/img/card17.png", matched:false },
+  {"src": "/img/card18.png", matched:false },
+  {"src": "/img/card19.png", matched:false },
+  {"src": "/img/card20.png", matched:false },
 
 ]
 
@@ -49,23 +49,36 @@ function App() {
     //console.log(card);
     if(choiceone!==null){
       setchoicetwo(card);
-      console.log("2");
-      console.log(card);
-      console.log(choiceone);
-      console.log(choicetwo);
+      // console.log("2");
+      // console.log(card);
+      // console.log(choiceone);
+      // console.log(choicetwo);
       //console.log(choicetwo.src);
     }
     else{
       setchoiceone(card); 
-      console.log("1");
-      console.log(card); 
+      //console.log("1");
+      //console.log(card); 
     }
   }
 
   useEffect(()=>{
     if(choiceone&&choicetwo){
       if(choiceone.src === choicetwo.src){
-        console.log("match");
+        // console.log("match");
+        setcards(allchoice =>{
+          return allchoice.map(card=>{
+            if(card.src === choiceone.src){
+              return{
+                ...card, matched:true// all card obj
+              }
+            }
+            else{
+              return card;
+            }
+          })
+        })
+
         reset();
       }
       else{
@@ -74,13 +87,18 @@ function App() {
       }
     }
     },[choiceone, choicetwo]);
+    console.log(cards);
 
   
     
 
   const reset =()=>{
+    setTimeout(() => {
     setchoiceone(null);
     setchoicetwo(null);
+      
+    }, 1500);
+    
     setturns(prevTurns => prevTurns+1);
   }
   return (
@@ -91,7 +109,7 @@ function App() {
       {/* display cards */}
       <div className='display'>
         {cards.map(card=>(
-          <Card key={card.id} card={card} handleChoice = {handleChoice}/>
+          <Card key={card.id} card={card} handleChoice = {handleChoice} flip={card === choiceone|| card === choicetwo|| card.matched === true}/>
         ))}
         </div>
     </div>

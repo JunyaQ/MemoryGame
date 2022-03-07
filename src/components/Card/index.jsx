@@ -3,14 +3,14 @@ import './card.css';
 
 
 
-function Card({card, handleChoice}){
+function Card({card, handleChoice,flip}){
   const handleClick=()=>{
     handleChoice(card);
 
   }
     return (
-      <div >
-      <div>
+      <div className="card" >
+      <div className={flip?"flip":""}>
         <img src={card.src} className='cardimage' alt="cardimage"/>
         <img src='/img/background1.jpg' className='cardbackground' alt='cardbackground' onClick={handleClick}/>
       </div>

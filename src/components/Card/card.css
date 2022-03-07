@@ -9,3 +9,11 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
   }
+
+  .card .cardimage{
+    transform: rotateY(90deg);
+    position:absolute
+  }
+  .flip .cardimage{
+    transform: rotateY(0deg);
+  }
