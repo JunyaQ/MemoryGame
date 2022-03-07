@@ -30,6 +30,8 @@ const cardimage = [
 ]
 
 function Game() {
+  const gameimage =[];
+  
   const [cards, setcards] = useState([]);
   const [turns, setturns] = useState(0);
 
@@ -40,13 +42,24 @@ function Game() {
 
   const [ value, setValue ] = useState(0); 
   // generate card
-  const generatecard = ()=>{
-    
+  const generatecard = (value)=>{
+    const original = [...cardimage];
+    for(var i = 0; i<value; i++){
+      
+      var random = Math.floor(Math.random()*(original.length));
+      console.log("random"+random);
+      gameimage.push(cardimage[random]);
+      original.slice(random,1);
+     // console.log(cardimage.at(random));
+    }
+    console.log("GAME IMAGE");
+    console.log(gameimage);
   }
 
   //shuffle
   const shufflecards = ()=>{
-    const doubled = [...cardimage, ...cardimage];
+    generatecard(value);
+    const doubled = [...gameimage, ...gameimage];
     const shufflecard= doubled.sort(()=>Math.random()-0.5);
     const finalcard = shufflecard.map((card)=>({...card,id:Math.random()}));
     setcards(finalcard);
@@ -93,7 +106,7 @@ function Game() {
       }
     }
     },[choiceone, choicetwo]);
-    console.log(cards);
+    //console.log(cards);
 
   
     
