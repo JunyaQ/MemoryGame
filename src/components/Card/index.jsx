@@ -3,6 +3,7 @@ import './card.css';
 
 
 
+
 function Card({card, handleChoice,flip,disable}){
   const handleClick=()=>{
     if(!disable){
@@ -15,7 +16,7 @@ function Card({card, handleChoice,flip,disable}){
       <div className="card" >
       <div className={flip?"flip":""}>
         <img src={card.src} className='cardimage' alt="cardimage"/>
-        <img src='/img/background1.jpg' className='cardbackground' alt='cardbackground' onClick={handleClick}/>
+        <img src={require('../../img/background1.jpg')} className='cardbackground' alt='cardbackground' onClick={handleClick}/>
       </div>
 
     </div>
