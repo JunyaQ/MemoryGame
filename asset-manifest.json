@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/MemoryGame/static/css/main.10d9f4b4.css",
-    "main.js": "/MemoryGame/static/js/main.7d6cf39b.js",
+    "main.js": "/MemoryGame/static/js/main.6efb6f69.js",
     "static/js/787.ee92e45e.chunk.js": "/MemoryGame/static/js/787.ee92e45e.chunk.js",
     "static/media/card43.png": "/MemoryGame/static/media/card43.2cc8a3531e7d9b942766.png",
     "static/media/card15.png": "/MemoryGame/static/media/card15.009882a21c27264a5104.png",
@@ -56,11 +56,11 @@
     "static/media/card44.png": "/MemoryGame/static/media/card44.8ed0e21b7eca654da93c.png",
     "index.html": "/MemoryGame/index.html",
     "main.10d9f4b4.css.map": "/MemoryGame/static/css/main.10d9f4b4.css.map",
-    "main.7d6cf39b.js.map": "/MemoryGame/static/js/main.7d6cf39b.js.map",
+    "main.6efb6f69.js.map": "/MemoryGame/static/js/main.6efb6f69.js.map",
     "787.ee92e45e.chunk.js.map": "/MemoryGame/static/js/787.ee92e45e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.10d9f4b4.css",
-    "static/js/main.7d6cf39b.js"
+    "static/js/main.6efb6f69.js"
   ]
 }
