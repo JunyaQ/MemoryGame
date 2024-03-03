@@ -12,10 +12,10 @@ When all the card flipped to the front, the game is over
 
 ## Locally test
 - npm run start 
-- The project will run : http://localhost:3000/
+
 
 ## Deployed page
-https://amemorycardgame.herokuapp.com/
+
 ![Main page](https://github.com/JunyaQ/MemoryGame/blob/main/src/img/webpage.jpg)
 
 ## Pictures of the card
